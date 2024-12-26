@@ -24,4 +24,7 @@ public class Cart {
 
     @OneToMany(mappedBy = "cart", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<CartItem> item=new ArrayList<>();
+
+    public void setCustomer(User savedUser) {
+    }
 }

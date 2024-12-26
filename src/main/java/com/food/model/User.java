@@ -49,4 +49,20 @@ public class User {
     public String getPassword() {
         return password;
     }
+
+    public void setEmail(String email) {
+    }
+
+    public void setRole(USER_ROLE role) {
+    }
+
+    public Object getFullName() {
+        return fullName;
+    }
+
+    public void setFullName(Object fullName) {
+    }
+
+    public void setPassword(String encode) {
+    }
 }
