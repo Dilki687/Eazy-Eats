@@ -23,7 +23,15 @@ public class User {
 
     private String fullName;
 
+    public Long getId() {
+        return id;
+    }
+
     private String email;
+
+    public List<RestaurantDto> getFavorites() {
+        return favorites;
+    }
 
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private String password;
