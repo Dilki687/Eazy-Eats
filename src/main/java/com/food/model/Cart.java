@@ -17,6 +17,34 @@ public class Cart {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public User getCustomer() {
+        return customer;
+    }
+
+    public Long getTotal() {
+        return total;
+    }
+
+    public void setTotal(Long total) {
+        this.total = total;
+    }
+
+    public List<CartItem> getItem() {
+        return item;
+    }
+
+    public void setItem(List<CartItem> item) {
+        this.item = item;
+    }
+
     @OneToOne
     private User customer;
 
