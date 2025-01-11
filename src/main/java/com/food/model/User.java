@@ -36,6 +36,30 @@ public class User {
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private String password;
 
+    public List<Address> getAddresses() {
+        return addresses;
+    }
+
+    public void setAddresses(List<Address> addresses) {
+        this.addresses = addresses;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public List<Order> getOrders() {
+        return orders;
+    }
+
+    public void setOrders(List<Order> orders) {
+        this.orders = orders;
+    }
+
+    public void setFavorites(List<RestaurantDto> favorites) {
+        this.favorites = favorites;
+    }
+
     private USER_ROLE role=USER_ROLE.ROLE_CUSTOMER;
 
     @JsonIgnore
