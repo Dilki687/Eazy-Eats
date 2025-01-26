@@ -36,10 +36,19 @@ public class CartServiceImp implements CartService{
 
         Cart cart=cartRepository.findByCustomerId(user.getId());
 
-        for (CartItem cartItem : cart.getItem()){
-            if (cartItem.getFood().equals(food)){
-                int newQuantity=cartItem.getQuantity()+req.getQuantity();
-                return updateCartItemQuantity(cartItem.getId(),newQuantity);
+        // Find the cart for the user, or create a new one if not found
+        if (cart == null) {
+            cart = new Cart();
+            cart.setCustomer(user);
+            cart.setTotal(0L); // Initialize the cart total
+            cartRepository.save(cart); // Save the new cart
+        }
+
+        // Check if the item already exists in the cart, if yes, update the quantity
+        for (CartItem cartItem : cart.getItem()) {
+            if (cartItem.getFood().equals(food)) {
+                int newQuantity = cartItem.getQuantity() + req.getQuantity();
+                return updateCartItemQuantity(cartItem.getId(), newQuantity);
             }
         }
 

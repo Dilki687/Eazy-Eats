@@ -54,5 +54,6 @@ public class Cart {
     private List<CartItem> item=new ArrayList<>();
 
     public void setCustomer(User savedUser) {
+        this.customer = savedUser;
     }
 }
